@@ -1,0 +1,76 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Chapter&nbsp;5.&nbsp;Manage data elements and categories</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS User Manual"><link rel="up" href="dhis2_user_manual_en.html" title="DHIS User Manual"><link rel="prev" href="ch04s13.html" title="4.13.&nbsp;Move organisation units within a hierarchy"><link rel="next" href="ch05s02.html" title="5.2.&nbsp;Workflow"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter&nbsp;5.&nbsp;Manage
+    data
+    elements
+    and categories</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s13.html">Prev</a>&nbsp;</td><th width="60%" align="center">&nbsp;</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05s02.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d0e2331"></a>Chapter&nbsp;5.&nbsp;Manage
+    data
+    elements
+    and categories</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="ch05.html#d0e2343">5.1. About data elements and categories</a></span></dt><dt><span class="section"><a href="ch05s02.html">5.2. Workflow</a></span></dt><dt><span class="section"><a href="ch05s03.html">5.3. Create a category option</a></span></dt><dt><span class="section"><a href="ch05s04.html">5.4. 
+      Create
+      a category</a></span></dt><dt><span class="section"><a href="ch05s05.html">5.5. Create a category combination</a></span></dt><dt><span class="section"><a href="ch05s06.html">5.6. Create a
+      data
+      element</a></span></dt><dt><span class="section"><a href="ch05s07.html">5.7. Create a data element group</a></span></dt><dt><span class="section"><a href="ch05s08.html">5.8. Create a data element group set</a></span></dt><dt><span class="section"><a href="ch05s09.html">5.9. Create
+      a category option group</a></span></dt><dt><span class="section"><a href="ch05s10.html">5.10. Create a category option group set</a></span></dt><dt><span class="section"><a href="ch05s11.html">5.11. Edit data elements and other objects</a></span></dt><dt><span class="section"><a href="ch05s12.html">5.12. Clone data elements and other objects</a></span></dt><dt><span class="section"><a href="ch05s13.html">5.13. Change sharing settings for data elements and other objects</a></span></dt><dt><span class="section"><a href="ch05s14.html">5.14. Delete data elements and other objects</a></span></dt><dt><span class="section"><a href="ch05s15.html">5.15. Display details of data elements and other objects</a></span></dt><dt><span class="section"><a href="ch05s16.html">5.16. Translate data elements and other objects</a></span></dt><dt><span class="section"><a href="ch05s17.html">5.17. Assign a code to a category option
+      combination</a></span></dt><dt><span class="section"><a href="ch05s18.html">5.18. Use category combinations as attributes</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2343"></a>5.1.&nbsp;About data elements and categories</h2></div></div></div><p>Data elements are the base of DHIS 2. Data elements define what is actually recorded in
+      the system, for example number of immunisations or number of cases of malaria.</p><p>Use categories to disaggregate data elements into
+      individual
+      atomic components. You
+      can
+      also use categories to assign attributes to all data recorded in a specific dataset,
+      such as "Implementing partner" and "Funding
+      agency."</p><p>Categories are typically a concept, for example "Gender", "Age" or "Disease Status". Data
+      elements such as "Number of cases of confirmed malaria" are often broken into
+      smaller component parts to determine, for example, the number of confirmed malaria cases of
+      particular age groups.</p><div class="example"><a name="d0e2360"></a><p class="title"><b>Example&nbsp;5.1.&nbsp;Three data element categories</b></p><div class="example-contents"><p>Create three categories: "Under 1", "1-5" and "Over 5". Assign them as categories to the
+        data element. This creates three separate fields for this data in the data entry
+        forms:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Number of confirmed malaria cases (Under 1)</p></li><li class="listitem"><p>Number of confirmed malaria cases (1-5)</p></li><li class="listitem"><p>Number of confirmed malaria cases (Over 5)</p></li></ul></div></div></div><br class="example-break"><p>Effective
+      use of categories simplifies the process of setting up the DHIS 2 system,
+      as the categories can be reused to disaggregate many different data elements. Otherwise, each
+      of the data elements listed in example above, would need to be created separately.
+      Judicious
+      use of categories will greatly simplify the DHIS 2 implementation, and allow for advanced
+      analysis.</p><p>In the <span class="bold"><strong>Maintenance</strong></span> app, you can manage the following data
+      elements and category objects:</p><div class="table"><a name="d0e2388"></a><p class="title"><b>Table&nbsp;5.1.&nbsp;Data
+        element objects in the Maintenance app</b></p><div class="table-contents"><table class="table" summary="Data&#xA;        element objects in the Maintenance app" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+              <p>Object type</p>
+            </th><th>
+              <p>Available functions</p>
+            </th></tr></thead><tbody><tr><td>
+              <p>Category option</p>
+            </td><td>
+              <p>Create, edit, clone, share, delete, show details and translate</p>
+            </td></tr><tr><td>
+              <p>Category</p>
+            </td><td>
+              <p>Create, edit, clone, share, delete, show details and translate</p>
+            </td></tr><tr><td>
+              <p>Category combination</p>
+            </td><td>
+              <p>Create, edit, clone, share, delete, show details and translate</p>
+            </td></tr><tr><td>
+              <p>Category option combination</p>
+            </td><td>
+              <p>Edit and show details</p>
+            </td></tr><tr><td>
+              <p>Category option group</p>
+            </td><td>
+              <p>Create, edit, clone, share, delete, show details and translate</p>
+            </td></tr><tr><td>
+              <p>Category option group set</p>
+            </td><td>
+              <p>Create, edit, clone, share, delete, show details and translate</p>
+            </td></tr><tr><td>
+              <p>Data element</p>
+            </td><td>
+              <p>Create, edit, clone, share, delete, show details and translate</p>
+            </td></tr><tr><td>
+              <p>Data element group</p>
+            </td><td>
+              <p>Create, edit, clone, share, delete, show details and translate</p>
+            </td></tr><tr><td>
+              <p>Data element group set</p>
+            </td><td>
+              <p>Create, edit, clone, share, delete, show details and translate</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s13.html">Prev</a>&nbsp;</td><td width="20%" align="center">&nbsp;</td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05s02.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4.13.&nbsp;Move
+      organisation units within a hierarchy&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;5.2.&nbsp;Workflow</td></tr></table></div></body></html>

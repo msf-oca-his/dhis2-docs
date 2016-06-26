@@ -1,0 +1,105 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>6.16.&nbsp;</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS User Manual"><link rel="up" href="ch06.html" title="Chapter&nbsp;6.&nbsp;Manage data sets and data entry forms"><link rel="prev" href="ch06s15.html" title="6.15.&nbsp;Scripting in custom forms"><link rel="next" href="ch07.html" title="Chapter&nbsp;7.&nbsp;User management"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">6.16.&nbsp;</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch06s15.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;6.&nbsp;Manage
+    data sets and
+    data
+    entry forms</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch07.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"></div><div class="table"><a name="d0e5151"></a><p class="title"><b>Table&nbsp;6.3.&nbsp;Data entry events</b></p><div class="table-contents"><table class="table" summary="Data entry events" border="1"><colgroup><col class="c1"><col class="c2"><col class="newCol3"></colgroup><thead><tr><th>Key</th><th>Description</th><th>Arguments</th></tr></thead><tbody><tr><td>
+              <p>dhis2.de.event.formLoaded</p>
+            </td><td>
+              <p>Triggered after the data entry form is rendered, but before data values are set
+                in entry fields.</p>
+            </td><td>
+              <p>Event | Data set ID</p>
+            </td></tr><tr><td>
+              <p>dhis2.de.event.dataValuesLoaded</p>
+            </td><td>
+              <p>Triggered after data values are set in entry fields.</p>
+            </td><td>
+              <p>Event | Data set ID</p>
+            </td></tr><tr><td>
+              <p>dhis2.de.event.formReady</p>
+            </td><td>
+              <p>Triggered when the data entry form is completely rendered and loaded with all
+                elements.</p>
+            </td><td>
+              <p>Event | Data set ID</p>
+            </td></tr><tr><td>
+              <p>dhis2.de.event.dataValueSaved</p>
+            </td><td>
+              <p>Triggered when a data value is saved successfully.</p>
+            </td><td>
+              <p>Event | Data set ID | Data value object</p>
+            </td></tr><tr><td>
+              <p>dhis2.de.event.completed</p>
+            </td><td>
+              <p>Triggered when a data set is successfully marked as complete.</p>
+            </td><td>
+              <p>Event | Data set ID | Complete registration object</p>
+            </td></tr><tr><td>
+              <p>dhis2.de.event.uncompleted</p>
+            </td><td>
+              <p>Triggered when a data set is successfully marked as incomplete.</p>
+            </td><td>
+              <p>Event | Data set ID</p>
+            </td></tr><tr><td>
+              <p>dhis2.de.event.validationSuccess</p>
+            </td><td>
+              <p>Triggered when validation is done and there were no violations.</p>
+            </td><td>
+              <p>Event | Data set ID</p>
+            </td></tr><tr><td>
+              <p>dhis2.de.event.validationError</p>
+            </td><td>
+              <p>Triggered when validation is done and there were one or more violations.</p>
+            </td><td>
+              <p>Event | Data set ID</p>
+            </td></tr><tr><td>
+              <p>dhis2.ou.event.orgUnitSelected</p>
+            </td><td>
+              <p>Triggered when one or more organisation units are selected in the org unit web
+                tree.</p>
+            </td><td>
+              <p>Event | Org unit IDs | Org unit names | Sub org unit IDs</p>
+            </td></tr></tbody></table></div></div><br class="table-break"><p>To register for an event:</p><pre class="screen">&lt;script type="text/javascript"&gt;
+
+dhis2.util.on( 'dhis2.de.event.formReady', function( event, ds ) {
+  console.log( 'The form with id: ' + ds + ' is loaded!' );
+} );
+
+dhis2.util.on( 'dhis2.de.event.dataValueSaved', function( event, ds, dv ) {
+  console.log( 'Data value: ' + dv.value + ' was saved with data element: ' + dv.de );
+} );
+
+dhis2.util.on( 'dhis2.de.event.completed', function( event, ds, cr ) {
+  console.log( 'Form was completed for org unit: ' + cr.ou );
+} );
+
+&lt;/script&gt;</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Note"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Note]" src="resources/images/admon/note.png"></td><th align="left">Note</th></tr><tr><td align="left" valign="top"><p>Be careful to only use "namespaced" events like the ones in the example above
+        and not general ones like "click" as the dhis2.util.on method will unregister the
+        event first.</p></td></tr></table></div><p>If your function only applies to certain data sets you can use the supplied data set
+      identifier and shortcut your function for unwanted data sets like this:</p><pre class="screen">dhis2.de.on( 'dhis2.de.event.validationSuccess', function( event, ds ) {
+  if ( $.inArray( ds, ['utXOiGbEj14', 'Re7qzHEThSC'] ) == -1 ) {
+    return false;
+  }
+  console.log( 'Form with id: ' + ds + ' validated successfully!' );
+} );</pre><p>The identifiers of the input fields in the data entry form is on the format described
+      below. This format can be used to select the input fields in your script and perform actions
+      on them:</p><pre class="screen">&lt;dataelementid&gt;-&lt;optioncomboid&gt;-val</pre><p>Since the data set identifier is provided for all events a feasible alternative is to
+      utilize the "files" Web API resource and keep your callback functions in a single
+      file, where you let the JavaScript code take action based on which data set is currently
+      loaded.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="d0e5330"></a>6.16.1.&nbsp;Functions</h3></div></div></div><p>The DHIS 2 data entry module contains Javascript API functions which can be accessed
+        from custom data entry forms.</p><p><span class="bold"><strong>dhis2.de.api.getSelections</strong></span>: This function returns a
+        Javascript object which contains properties for all dimensions with corresponding values for
+        the identifiers of the selected options. It contains properties for "ds" (data set), "pe"
+        (period), "ou" (organisation unit) and identifiers for all data sete categories.</p><p>An example response looks like
+        this:</p><pre class="screen">{
+ +  ds: "lyLU2wR22tC",
+ +  pe: "201605",
+ +  ou: "g8upMTyEZGZ",
+ +  LFsZ8v5v7rq: "CW81uF03hvV",
+ +  yY2bQYqNt0o: "yMj2MnmNI8L"
+ +}</pre><p>Example Javascript usage of this
+        function:</p><pre class="screen">var sel = dhis2.de.api.getSelections();
+ +var orgUnit = sel["ou"];
+ +var partner = sel["LFsZ8v5v7rq"];</pre></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch06s15.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch06.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch07.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">6.15.&nbsp;Scripting
+      in custom forms&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;Chapter&nbsp;7.&nbsp;User management</td></tr></table></div></body></html>

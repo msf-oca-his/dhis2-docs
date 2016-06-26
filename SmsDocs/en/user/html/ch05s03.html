@@ -1,0 +1,197 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>5.3.&nbsp;Create a data element</title><link rel="stylesheet" type="text/css" href="resources/css/docbook_bsd.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="dhis2_user_manual_en.html" title="DHIS User Manual"><link rel="up" href="ch05.html" title="Chapter&nbsp;5.&nbsp;Manage data elements"><link rel="prev" href="ch05s02.html" title="5.2.&nbsp;Workflow"><link rel="next" href="ch05s04.html" title="5.4.&nbsp;Create a data element group"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5.3.&nbsp;Create a
+      data
+      element</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch05s02.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;5.&nbsp;Manage
+    data
+    elements</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch05s04.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="dataElement"></a>5.3.&nbsp;Create a
+      data
+      element</h2></div></div></div><p>Data elements are the base of DHIS 2. Data elements define what is actually recorded in
+      system, for example number of immunisations or number of cases of malaria.</p><p>The actual creation and definition of the data elements themselves are far beyond the
+      scope of this manual to describe, but it is assumed that an administrator will be provided
+      with a list of standardised data elements for inclusion into the DHIS 2 system.</p><p>The 'Search by name' allows you to filter a range of data elements if you know
+      either the full name of the data element, or just a part of it. Type the name into the search
+      field and any matching data elements are displayed below.</p><div class="screenshot"><div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="80%"><tr><td align="center"><img src="resources/images/maintainence/data_element_main2.png" align="middle" width="100%"></td></tr></table></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click <span class="bold"><strong>Apps</strong></span> &gt; <span class="bold"><strong>Maintenance</strong></span> &gt; <span class="bold"><strong>Data elements</strong></span> &gt; <span class="bold"><strong>Data Element</strong></span>.</p></li><li class="listitem"><p>Click the yellow plus
+          button.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Name</strong></span> field, define the precise name of the
+          data element.</p><p>Each data element must have a unique name.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Short name</strong></span> field, define a short name for the
+          data element.</p><p>Typically, the short name is an abbreviation of the full data element name. This
+          attribute is often used in reports to display the name of the data element, where space is
+          limited.</p></li><li class="listitem"><p>(Optional) In the <span class="bold"><strong>Code</strong></span> field, assign a code.</p><p>In many countries data elements are assigned a code.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Description</strong></span> field, type a description of the
+          data element. Be as precise as possible and include complete information about how the
+          data element is measured and what its purpose is.</p></li><li class="listitem"><p>In the
+            <span class="bold"><strong>Form name</strong></span> field, type an alternative name of
+          the data element. This name can be used in either section or automatic data entry forms.
+          The form name is applied automatically.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Domain
+            type</strong></span>
+          field, select whether the data element is an aggregate or tracker
+          type
+          of data element.</p></li><li class="listitem"><p>In the <span class="bold"><strong>Value
+            type</strong></span>
+          field, select the type of data that the data element will record.</p><div class="table"><a name="d0e2640"></a><p class="title"><b>Table&nbsp;5.2.&nbsp;Value </b></p><div class="table-contents"><table class="table" summary="Value " border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+                  <p>Value type</p>
+                </th><th>
+                  <p>Description</p>
+                </th></tr></thead><tbody><tr><td>
+                  <p>Integer</p>
+                </td><td>
+                  <p>Any whole number (positive and negative), including zero.</p>
+                </td></tr><tr><td>
+                  <p>Positive integer</p>
+                </td><td>
+                  <p>Any whole number greater than (but not including) zero.</p>
+                </td></tr><tr><td>
+                  <p>Negative integer</p>
+                </td><td>
+                  <p>Any whole number less than (but not including) zero.</p>
+                </td></tr><tr><td>
+                  <p>Positive of zero integer</p>
+                </td><td>
+                  <p>Any positive whole number, including zero.</p>
+                </td></tr><tr><td>
+                  <p>Number</p>
+                </td><td>
+                  <p>Any real numeric value with a single decimal point. Thousands separators and
+                    scientific notation is not supported.</p>
+                </td></tr><tr><td>
+                  <p>Unit interval</p>
+                </td><td>
+                  <p>Any real number greater than or equal to 0 and less than or equal to
+                    1.</p>
+                </td></tr><tr><td>
+                  <p>Percentage</p>
+                </td><td>
+                  <p>Whole numbers inclusive between 0 and 100.</p>
+                </td></tr><tr><td>Coordinate</td><td>
+                  <p>A point coordinate specified as longitude and latitude in decimal degrees.
+                    All coordinate should be specified in the format "-19.23 , 56.42" with
+                    a comma separating the longitude and latitude.</p>
+                </td></tr><tr><td>
+                  <p>Text</p>
+                </td><td>
+                  <p>Textual value. The maximum number of allowed characters per value is
+                    50,000.</p>
+                </td></tr><tr><td>
+                  <p>Long text</p>
+                </td><td>
+                  <p>Textual value. Renders as text area in
+                    forms.</p>
+                </td></tr><tr><td>
+                  <p>File</p>
+                </td><td>
+                  <p>A file resource where you can store external files, for example documents
+                    and photos.</p>
+                </td></tr><tr><td>
+                  <p>Date</p>
+                </td><td>
+                  <p>Dates render as calendar widget in data entry.</p>
+                </td></tr><tr><td>
+                  <p>Time</p>
+                </td><td>
+                  <p>Time is stored in HH:mm format.</p>
+                  <p>HH is a number between 0 and 23</p>
+                  <p>mm is a number between 00 and 59</p>
+                </td></tr><tr><td>
+                  <p>Username</p>
+                </td><td>
+                  <p>This
+                    will be populated with the username of the user which
+                    performs data entry automatically during the data entry process.</p>
+                </td></tr><tr><td>
+                  <p>Yes/No</p>
+                </td><td>
+                  <p>Boolean values, renders as drop-down lists in data entry.</p>
+                </td></tr><tr><td>
+                  <p>Yes only</p>
+                </td><td>
+                  <p>True values, renders as check-boxes in data entry.</p>
+                </td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>In the <span class="bold"><strong>Aggregation
+            operator</strong></span>
+          field, select the default aggregation operation that will be used on the data
+          element.</p><p>Most data elements should have the <span class="bold"><strong>Sum</strong></span> option set.
+          This includes all data elements which should be added together. Other data elements, such
+          as staffing levels, should be set to use the <span class="bold"><strong>Average</strong></span>
+          operator, when values along the time dimension should not be added together, but rather
+          averaged.</p><div class="table"><a name="d0e2863"></a><p class="title"><b>Table&nbsp;5.3.&nbsp;Aggregation operators</b></p><div class="table-contents"><table class="table" summary="Aggregation operators" border="1"><colgroup><col class="c1"><col class="c2"></colgroup><thead><tr><th>
+                  <p>Aggregation
+                    operator</p>
+                </th><th>
+                  <p>Description</p>
+                </th></tr></thead><tbody><tr><td>
+                  <p>Sum</p>
+                </td><td>
+                  <p>Sum of data values in the period and organisation unit dimension.</p>
+                </td></tr><tr><td>
+                  <p>Average (sum in orgunit hierarchy)</p>
+                </td><td>
+                  <p>Average of data values in the period dimension, sum in the organisation unit
+                    dimensions.</p>
+                </td></tr><tr><td>
+                  <p>Average</p>
+                </td><td>
+                  <p>Average the values in both the period as and the organisation unit
+                    dimensions.</p>
+                </td></tr><tr><td>
+                  <p>Count</p>
+                </td><td>
+                  <p>Count of data values.</p>
+                </td></tr><tr><td>
+                  <p>Standard deviation</p>
+                </td><td>
+                  <p>Standard deviation (population-based) of data values.</p>
+                </td></tr><tr><td>
+                  <p>Variance</p>
+                </td><td>
+                  <p>Variance (population-based) of data values.</p>
+                </td></tr><tr><td>
+                  <p>Min</p>
+                </td><td>
+                  <p>Minimum of data values.</p>
+                </td></tr><tr><td>
+                  <p>Max</p>
+                </td><td>
+                  <p>Maximum of data values.</p>
+                </td></tr><tr><td>
+                  <p>None</p>
+                </td><td>
+                  <p>No aggregation is performed in any dimension.</p>
+                </td></tr></tbody></table></div></div><br class="table-break"></li><li class="listitem"><p>If you want to save zeros for a particular reason, select <span class="bold"><strong>Store
+            zero data values</strong></span>. By default, DHIS 2 does not store zeros entered in the data
+          entry module.</p></li><li class="listitem"><p>In the <span class="bold"><strong>URL</strong></span> field, enter a
+          link
+          to an in-depth description of the data element.</p><p>For example a link to a metadata repository or registry that contains detailed
+          technical information about the definition and measurement of the data element. </p></li><li class="listitem"><p>In the <span class="bold"><strong>Category combination</strong></span> field, define which
+          category combination the data element should have. This is also known as the
+          "disaggregation".
+        </p></li><li class="listitem"><p>Select an
+          <span class="bold"><strong>Option
+            set</strong></span>.</p><p>Option sets are predefined lists of options which can be
+          used
+          in data entry.</p></li><li class="listitem"><p>Select an
+          <span class="bold"><strong>Option set for comments</strong></span>.</p><p>Option sets for comments are predefined lists of options
+          which
+          can be used to specify standardized comments for data values in data
+          entry.</p></li><li class="listitem"><p>Select a <span class="bold"><strong>Legend set</strong></span>.</p><p>Legend
+          sets are used in the <span class="bold"><strong>GIS</strong></span> app to
+          display certain data elements with certain icons.</p></li><li class="listitem"><p>Set the <span class="bold"><strong>Aggregation levels</strong></span>
+          to
+          allow the data element to be aggregated at one or more levels:</p><div class="orderedlist"><ol class="orderedlist" type="a"><li class="listitem"><p>In the left pane, select the levels you want to assign to the data element.</p></li><li class="listitem"><p>Click the right arrow to assign the aggregation levels.</p></li></ol></div><p>The Aggregation Levels option allows the data element to be aggregated at one or more
+          levels.</p><p>By default, the aggregation will start at the lowest assigned organisation unit. If
+          e.g. Chiefdom is selected below it means that Chiefdom, District, and National aggregates
+          will use Chiefdom (the highest aggregation level available) as the data source, and PHU
+          data will not be included.</p><p> PHU data will still be available for the PHU level, but not included in aggregations
+          to the levels above. If District and Chiefdom are both selected then the District and
+          National level aggregates will use District data as their source, Chiefdom will use
+          Chiefdom, and PHU will use PHU. Read more about aggregation levels in the Reporting
+          chapter i the section on data sources for reporting.</p></li><li class="listitem"><p>Select a <span class="bold"><strong>Classification</strong></span>.</p></li><li class="listitem"><p>Select
+          a <span class="bold"><strong>Collection method</strong></span>.</p></li><li class="listitem"><p>Select
+          a <span class="bold"><strong>Rationale</strong></span>.</p></li><li class="listitem"><p>Select
+          a <span class="bold"><strong>Unit of measure</strong></span>.</p></li><li class="listitem"><p>Select a <span class="bold"><strong>Main data element group</strong></span>.</p><p>Data element group sets are only applicable if they have been
+          defined.
+          If data element group sets have been defined, they will appear in the <span class="bold"><strong>Main data element group</strong></span> list. Select
+          each
+          data element group from the list of group sets provided. Groups can be selected based on
+          if the data element is of aggregate or tracker type.</p></li><li class="listitem"><p>Select<span class="bold"><strong>Tracker-based data</strong></span>.</p></li><li class="listitem"><p><span class="bold"><strong>Attributes</strong></span>: This section is only applicable if
+          attributes have been defined in Data Administration -&gt; Attributes. As an example
+          "Classification," "Collection Method," "Rationale" and
+          "Unit of measure" are all data element attributes and are discussed
+          below.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Save</strong></span>.</p></li></ol></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch05s02.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch05.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch05s04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">5.2.&nbsp;Workflow&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="dhis2_user_manual_en.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;5.4.&nbsp;Create a data element group</td></tr></table></div></body></html>
